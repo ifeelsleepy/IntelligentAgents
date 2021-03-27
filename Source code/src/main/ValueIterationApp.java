@@ -37,9 +37,7 @@ public class ValueIterationApp {
 			for (int i = 0; i < Data.ROWS; i++) {
 				for (int j = 0; j < Data.COLS; j++) {
 					curSqData[i][j].setAction(newSqData[i][j].getAction());
-					curSqData[i][j].setUtil(newSqData[i][j].getUtil());
-				}
-			}
+					curSqData[i][j].setUtil(newSqData[i][j].getUtil()); } }
 			diff = 0;
 			// for each square in the grid
 			for (int i = 0; i < Data.ROWS; i++) {
@@ -49,7 +47,6 @@ public class ValueIterationApp {
 						continue;
 					}
 					reward = grid[i][j].getReward();
-					// Bellman eqn
 					// U(s) = R(s) + discount * max(a)sum(P(s'|s,a)U(s'))
 					action_util = HelperFunctions.max(grid, i, j, curSqData);
 					max_utility = action_util.getUtil();
@@ -71,7 +68,6 @@ public class ValueIterationApp {
 		} while (!(diff < Data.CONVERGENCE));
 
 		return sqDataList;
-
 	}
 
 }

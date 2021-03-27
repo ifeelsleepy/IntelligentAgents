@@ -28,7 +28,6 @@ public class PolicyIterationApp {
 
 		int count = 0;
 		boolean policyUnchanged = true;
-
 		do {
 			System.out.printf("Iteration %s\n", count);
 			// policy estimation
@@ -56,11 +55,7 @@ public class PolicyIterationApp {
 					if (bestData.getUtil() > policyUtil) {
 						policyData[i][j].setAction(bestData.getAction());
 						policyData[i][j].setUtil(bestData.getUtil());
-						policyUnchanged = false;
-					}
-
-				}
-			}
+						policyUnchanged = false; } } }
 			for (int i = 0; i < Data.ROWS; i++) {
 				for (int j = 0; j < Data.COLS; j++) {
 					curSqData[i][j] = new SquareData(policyData[i][j].getAction(), policyData[i][j].getUtil());

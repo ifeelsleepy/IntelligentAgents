@@ -89,7 +89,7 @@ public class HelperFunctions {
 
 	}
 
-	// maximum function from bellman eqn
+	// maximum function from bellman equation
 	public static SquareData max(State[][] grid, int row, int col, SquareData[][] curUtils) {
 		String intendedAction, leftAction, rightAction;
 		int[] intendedCoord, leftCoord, rightCoord;
